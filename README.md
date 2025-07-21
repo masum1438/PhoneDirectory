@@ -1,10 +1,10 @@
-# 📞 Phone Directory API
+#  Phone Directory API
 
 This is a Web API project for managing contacts with Admin and Client roles. It supports individual and bulk contact operations, Excel import/export, and an auto-delete feature via background services.
 
 ---
 
-## 🔐 Auth API
+##  Auth API
 
 - **POST `/api/Auth/register`**  
   Registers a new user with email and password. Returns JWT token on success.
@@ -47,7 +47,7 @@ This is a Web API project for managing contacts with Admin and Client roles. It 
 
 ---
 
-## 📁 Bulk Contact Operations
+##  Bulk Contact Operations
 
 - **POST `/api/Contact/bulk`**  
   Uploads and inserts multiple contacts (e.g., from Excel) one by one via background service.
@@ -60,7 +60,7 @@ This is a Web API project for managing contacts with Admin and Client roles. It 
 
 ---
 
-## 📤📥 File Import/Export
+## File Import/Export
 
 - **POST `/api/Contact/import`**  
   Imports contacts from an uploaded Excel file and processes them asynchronously.
@@ -70,7 +70,7 @@ This is a Web API project for managing contacts with Admin and Client roles. It 
 
 ---
 
-## 🔄 Auto Delete Feature
+## Auto Delete Feature
 
 - **POST `/api/Contact/bulk-delete-auto`**  
   Triggers auto-delete of a defined number of contacts according to admin-defined settings.
@@ -80,7 +80,7 @@ This is a Web API project for managing contacts with Admin and Client roles. It 
 
 ---
 
-## 👥 User Roles
+##  User Roles
 
 - **Admin:**  
   Full control — can view, create, update, disable, delete any contact. Can also manage users and toggle auto-delete settings.
@@ -89,7 +89,7 @@ This is a Web API project for managing contacts with Admin and Client roles. It 
   Limited access — can view  contact list and contact details.
 
 ---
-## 📷 Adding project font-end image
+##  Adding project font-end image
 <img width="1248" height="531" alt="fnt-login" src="https://github.com/user-attachments/assets/706ceeba-c94b-444b-ad57-12386c28b305" />
 <img width="1211" height="557" alt="fnt-register" src="https://github.com/user-attachments/assets/f08e8249-ce7e-437d-b359-e6796f0f6d02" />
 
@@ -106,7 +106,7 @@ This is a Web API project for managing contacts with Admin and Client roles. It 
 
 ---
 
-## 📷 Adding project swagger-api image
+##  Adding project swagger-api image
 
 <img width="732" height="628" alt="login" src="https://github.com/user-attachments/assets/c1592da2-7c43-435c-8a65-8017b190d729" />
 
