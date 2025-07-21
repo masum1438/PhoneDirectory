@@ -17,7 +17,7 @@ namespace PhoneDirectoryApi.Controllers
             _context = context;
         }
 
-        // GET: Contacts
+      
         public async Task<IActionResult> Index()
         {
             var contacts = await _context.Contacts.ToListAsync();
@@ -36,7 +36,7 @@ namespace PhoneDirectoryApi.Controllers
             return View(dtoList);
         }
 
-        // GET: Contacts/Details/5
+       
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null) return NotFound();
@@ -59,14 +59,14 @@ namespace PhoneDirectoryApi.Controllers
             return View(dto);
         }
 
-        // GET: Contacts/Create
+        
         [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Contacts/Create
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]
@@ -92,7 +92,7 @@ namespace PhoneDirectoryApi.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // GET: Contacts/Edit/5
+       
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
@@ -116,7 +116,7 @@ namespace PhoneDirectoryApi.Controllers
             return View(dto);
         }
 
-        // POST: Contacts/Edit/5
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]
@@ -145,7 +145,7 @@ namespace PhoneDirectoryApi.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // GET: Contacts/Delete/5
+       
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
@@ -169,7 +169,7 @@ namespace PhoneDirectoryApi.Controllers
             return View(dto);
         }
 
-        // POST: Contacts/Delete/5
+        
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]
@@ -185,7 +185,7 @@ namespace PhoneDirectoryApi.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // POST: Contacts/Disable/5
+      
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]
