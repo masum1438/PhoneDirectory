@@ -105,6 +105,10 @@ This is a Web API project for managing contacts with Admin and Client roles. It 
 <img width="1241" height="613" alt="client-view" src="https://github.com/user-attachments/assets/f77d0f48-9d19-462d-86cc-abe1f3412746" />
 
 ---
+##Main Api
+<img width="1014" height="409" alt="image" src="https://github.com/user-attachments/assets/2f97a90a-cd8a-41bc-9d3c-422cb5fdfea3" />
+<img width="1014" height="518" alt="image" src="https://github.com/user-attachments/assets/5bff817c-c506-4878-90e7-c2a0ecc93c32" />
+
 
 ##  Adding project swagger-api image
 
