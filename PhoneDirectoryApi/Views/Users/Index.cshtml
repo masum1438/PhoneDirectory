@@ -1,0 +1,57 @@
+﻿@model IEnumerable<PhoneDirectoryApi.Models.ViewModels.UserWithRolesViewModel>
+
+@{
+    ViewData["Title"] = "User Management";
+}
+
+<h2>User Management</h2>
+
+<table class="table table-bordered">
+    <thead class="table-dark">
+        <tr>
+           
+            <th>Email</th>
+            
+            <th>Roles</th>
+            <th>Lock Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                
+                <td>@user.Email</td>
+               
+                <td>
+                    @foreach (var role in user.Roles)
+                    {
+                        <span class="badge bg-primary">@role</span>
+                    }
+                </td>
+                <td>
+                    @if (user.LockoutEnd.HasValue && user.LockoutEnd.Value > DateTimeOffset.UtcNow)
+                    {
+                        <span class="badge bg-danger">Locked</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-success">Active</span>
+                    }
+                </td>
+                <td>
+                    @if (user.LockoutEnd.HasValue && user.LockoutEnd.Value > DateTimeOffset.UtcNow)
+                    {
+                        <a asp-action="Unlock" asp-route-id="@user.Id" class="btn btn-sm btn-success">Unlock</a>
+                    }
+                    else
+                    {
+                        <a asp-action="Lock" asp-route-id="@user.Id" class="btn btn-sm btn-warning">Lock</a>
+                    }
+                    <a asp-action="ManageRoles" asp-route-id="@user.Id" class="btn btn-sm btn-info ms-1">Manage Roles</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

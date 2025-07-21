@@ -10,33 +10,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>@ViewData["Title"] - Phone Directory</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-
-    <style>
-        /* Padding so content is not hidden behind fixed navbar/footer */
-        body {
-            padding-top: 70px;    /* adjust if navbar height changes */
-            padding-bottom: 60px; /* adjust if footer height changes */
-        }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" asp-append-version="true" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-primary fixed-top shadow">
             <div class="container">
-                <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                <a class="navbar-brand fw-bold" asp-controller="Home" asp-action="Index">
                     <i class="fas fa-phone-alt me-2"></i>Phone Directory
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav me-auto">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="Home" asp-action="Index">
-                                <i class="fas fa-home"></i> Home
+                                <i class="fas fa-home me-1"></i>Home
                             </a>
                         </li>
 
@@ -44,16 +37,21 @@
                         {
                             <li class="nav-item">
                                 <a class="nav-link" asp-controller="Contacts" asp-action="Index">
-                                    <i class="fas fa-address-book"></i> Contacts
+                                    <i class="fas fa-address-book me-1"></i>Contacts
                                 </a>
                             </li>
                         }
 
                         @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
                         {
-                             <li class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link" asp-controller="AutoDelete" asp-action="Index">
-                                    <i class="fas fa-address-book"></i> AutoDelete
+                                    <i class="fas fa-trash-alt me-1"></i>Auto Delete
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Users" asp-action="Index">
+                                    <i class="fas fa-users me-1"></i>Users
                                 </a>
                             </li>
                         }
@@ -64,14 +62,14 @@
                         {
                             <li class="nav-item">
                                 <span class="nav-link text-white">
-                                    <i class="fas fa-user-circle"></i> @User.Identity.Name
+                                    <i class="fas fa-user-circle me-1"></i>@User.Identity.Name
                                 </span>
                             </li>
                             <li class="nav-item">
                                 <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
                                     @Html.AntiForgeryToken()
-                                    <button type="submit" class="btn btn-link nav-link" style="display:inline; padding:0;">
-                                        <i class="fas fa-sign-out-alt"></i> Logout
+                                    <button type="submit" class="btn btn-link nav-link text-white" style="display:inline; padding:0;">
+                                        <i class="fas fa-sign-out-alt me-1"></i>Logout
                                     </button>
                                 </form>
                             </li>
@@ -80,12 +78,12 @@
                         {
                             <li class="nav-item">
                                 <a class="nav-link" asp-controller="Account" asp-action="Login">
-                                    <i class="fas fa-sign-in-alt"></i> Login
+                                    <i class="fas fa-sign-in-alt me-1"></i>Login
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" asp-controller="Account" asp-action="Register">
-                                    <i class="fas fa-user-plus"></i> Register
+                                    <i class="fas fa-user-plus me-1"></i>Register
                                 </a>
                             </li>
                         }
@@ -95,14 +93,13 @@
         </nav>
     </header>
 
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+    <main class="container pt-5 mt-4">
+        @RenderBody()
+    </main>
 
+    
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
