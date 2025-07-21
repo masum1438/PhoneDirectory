@@ -95,4 +95,4 @@ This is a .NET 8 Web API project for managing contacts with Admin and Client rol
 To include an image (e.g., UI preview), use the following Markdown syntax:
 
 ```markdown
-![Alt Text](https://your-image-url.com/image.png)
+![Alt Text](<img width="728" height="503" alt="Image" src="https://github.com/user-attachments/assets/fd8f877a-45d7-4edf-9695-72deba061e42" />)
