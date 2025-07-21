@@ -1,0 +1,6 @@
+﻿@model PhoneDirectoryApi.Models.Dtos.ContactDto
+<h3>Are you sure you want to delete this contact?</h3>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit">Delete</button>
+</form>
